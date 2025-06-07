@@ -27,8 +27,13 @@ form.addEventListener("submit", async (e) => {
       form.reset();
     } else {
       showStatus("There was an error. Please try again.", false);
+
+      console.error("Server responded with status:", res.status);
+    const errorText = await res.text();
+    console.error("Response body:", errorText);
     }
-  } catch {
+  } catch (err) {
+    console.log(err);
     showStatus("There was an error. Please try again.", false);
   }
 });
