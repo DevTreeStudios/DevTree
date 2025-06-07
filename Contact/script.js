@@ -12,7 +12,8 @@ form.addEventListener("submit", async (e) => {
 
   const data = new FormData(form);
   const action = form.getAttribute("action");
-
+console.log(action);
+  console.log(data);
   try {
     const res = await fetch(action, {
       method: "POST",
