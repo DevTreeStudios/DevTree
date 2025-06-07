@@ -51,7 +51,6 @@ window.onload = function() {
 
 document.addEventListener('DOMContentLoaded', function () {
   console.log("1");
-  const form = document.getElementById("contact-form");
   const tokenInput = document.getElementById("g-recaptcha-response");
 
   if (form && tokenInput) {
