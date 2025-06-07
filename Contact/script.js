@@ -28,13 +28,8 @@ console.log(action);
       form.reset();
     } else {
       showStatus("There was an error. Please try again.", false);
-
-      console.error("Server responded with status:", res.status);
-    const errorText = await res.text();
-    console.error("Response body:", errorText);
     }
-  } catch (err) {
-    console.log(err);
+  } catch {
     showStatus("There was an error. Please try again.", false);
   }
 });
@@ -55,19 +50,23 @@ window.onload = function() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  console.log("1");
   const form = document.getElementById("contact-form");
   const tokenInput = document.getElementById("g-recaptcha-response");
 
   if (form && tokenInput) {
+    console.log("2");
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-
+console.log("3");
       grecaptcha.ready(function () {
+        console.log("4");
         grecaptcha.execute('6LcqDVkrAAAAADb1QY3e_NfIZQYdoNcG0RjqJSCl', { action: 'submit' }).then(function (token) {
           tokenInput.value = token;
-
+console.log("5");
           if (token) {
             form.submit();
+            console.log("6");
           } else {
             alert("Failed to generate reCAPTCHA token.");
           }
