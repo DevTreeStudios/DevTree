@@ -1,9 +1,92 @@
-.services-main {
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(135deg, #1a202c, #2d3748);
+  color: #cbd5e1;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: linear-gradient(90deg, #4c51bf, #6b46c1);
+  padding: 0 2rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  box-shadow: 0 2px 8px rgb(107 70 193 / 0.7);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.logo {
+  color: #d6bcfa;
+  font-weight: 700;
+  font-size: 1.4rem;
+  user-select: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link,
+.nav-links li a {
+  color: #a0aec0;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0;
+  display: inline-block;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #d6bcfa;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  width: 24px;
+  height: 18px;
+  justify-content: center;
+}
+
+.hamburger span {
+  height: 3px;
+  background: #d6bcfa;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+main.services-main {
   max-width: 900px;
   margin: 6rem auto 4rem;
   padding: 0 1.5rem;
   color: #cbd5e1;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  flex-grow: 1;
 }
 
 .services-main h1,
@@ -80,11 +163,41 @@
 }
 
 @media (max-width: 768px) {
-  .services-main {
-    margin: 5rem 1rem 3rem;
-    padding: 0 1rem;
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    width: 220px;
+    height: 100vh;
+    background: linear-gradient(180deg, #1a202c, #2d3748);
+    padding: 2rem 1rem;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.9);
+    transition: right 0.3s ease;
+    z-index: 9999;
   }
-  .services-list {
-    grid-template-columns: 1fr 1fr;
+  .nav-links.open {
+    right: 0;
+  }
+  .nav-links li {
+    margin: 0;
+  }
+  .nav-links li a {
+    font-size: 1.2rem;
+    color: #a0aec0;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    background: transparent;
+    display: block;
+  }
+  .nav-links li a:hover,
+  .nav-links li a.active {
+    background-color: #3c4a6e;
+    color: #d6bcfa;
+    text-decoration: none;
+  }
+  .hamburger {
+    display: flex;
   }
 }
