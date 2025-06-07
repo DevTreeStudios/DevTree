@@ -161,7 +161,6 @@ body, html {
     height: 100vh;
     background: linear-gradient(180deg, #1a202c, #2d3748);
     padding: 2rem 1rem;
-    display: flex;
     flex-direction: column;
     gap: 1.5rem;
     box-shadow: -4px 0 12px rgba(0, 0, 0, 0.9);
@@ -171,19 +170,22 @@ body, html {
   .nav-links.open {
     right: 0;
   }
-  .nav-link {
-    color: #a0aec0;
+  .nav-links li {
+    margin: 0;
+  }
+  .nav-links li a {
     font-size: 1.2rem;
-    text-decoration: none;
+    color: #a0aec0;
     padding: 0.75rem 1rem;
     border-radius: 6px;
     background: transparent;
-    transition: background-color 0.3s ease;
+    display: block;
   }
-  .nav-link:hover,
-  .nav-link.active {
+  .nav-links li a:hover,
+  .nav-links li a.active {
     background-color: #3c4a6e;
     color: #d6bcfa;
+    text-decoration: none;
   }
   .hamburger {
     display: flex;
