@@ -55,19 +55,25 @@ window.onload = function() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  grecaptcha.ready(function () {
-    const form = document.getElementById("contact-form");
-    const tokenInput = document.getElementById("g-recaptcha-response");
+  const form = document.getElementById("contact-form");
+  const tokenInput = document.getElementById("g-recaptcha-response");
 
-    if (form && tokenInput) {
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
+  if (form && tokenInput) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
 
+      grecaptcha.ready(function () {
         grecaptcha.execute('6LcqDVkrAAAAADb1QY3e_NfIZQYdoNcG0RjqJSCl', { action: 'submit' }).then(function (token) {
           tokenInput.value = token;
-          form.submit();
+
+          if (token) {
+            form.submit();
+          } else {
+            alert("Failed to generate reCAPTCHA token.");
+          }
         });
       });
-    }
-  });
+    });
+  } else {
+    console.log("Error: Unable to get form element");
 });
