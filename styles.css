@@ -61,7 +61,7 @@ nav,
 }
 
 .accent {
-  color: #805ad5;
+  background: linear-gradient(90deg, #4c51bf, #6b46c1);
 }
 
 .nav-links {
