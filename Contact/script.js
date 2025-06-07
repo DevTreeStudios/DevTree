@@ -54,13 +54,20 @@ window.onload = function() {
   } 
 }
 
-grecaptcha.ready(function () {
-  document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault();
+document.addEventListener('DOMContentLoaded', function () {
+  grecaptcha.ready(function () {
+    const form = document.getElementById("contact-form");
+    const tokenInput = document.getElementById("g-recaptcha-response");
 
-    grecaptcha.execute('6LcqDVkrAAAAADb1QY3e_NfIZQYdoNcG0RjqJSCl', { action: 'submit' }).then(function (token) {
-      document.getElementById("g-recaptcha-response").value = token;
-      e.target.submit();
-    });
+    if (form && tokenInput) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        grecaptcha.execute('6LcqDVkrAAAAADb1QY3e_NfIZQYdoNcG0RjqJSCl', { action: 'submit' }).then(function (token) {
+          tokenInput.value = token;
+          form.submit();
+        });
+      });
+    }
   });
 });
