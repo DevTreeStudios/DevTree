@@ -159,7 +159,8 @@ body, html {
     right: -100%;
     background: linear-gradient(180deg, #1a202c, #2d3748);
     height: calc(100% - 60px);
-    width: 200px;
+    width: 220px;
+    display: flex;
     flex-direction: column;
     padding: 2rem 1rem;
     box-shadow: -4px 0 12px rgba(0, 0, 0, 0.9);
