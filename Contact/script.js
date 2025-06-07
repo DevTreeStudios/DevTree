@@ -7,33 +7,6 @@ hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("open");
 });
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const data = new FormData(form);
-  const action = form.getAttribute("action");
-console.log(action);
-  console.log(data);
-  try {
-    const res = await fetch(action, {
-      method: "POST",
-      body: data,
-      headers: {
-        Accept: "application/json",
-      },
-    });
-
-    if (res.ok) {
-      showStatus("Your message has been sent!", true);
-      form.reset();
-    } else {
-      showStatus("There was an error. Please try again.", false);
-    }
-  } catch {
-    showStatus("There was an error. Please try again.", false);
-  }
-});
-
 function showStatus(message, success) {
   statusBox.textContent = message;
   statusBox.className = `form-status ${success ? "success" : "error"} show`;
@@ -49,30 +22,51 @@ window.onload = function() {
   } 
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  console.log("1");
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contact-form");
   const tokenInput = document.getElementById("g-recaptcha-response");
 
-  if (form && tokenInput) {
-    console.log("2");
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-console.log("3");
-      grecaptcha.ready(function () {
-        console.log("4");
-        grecaptcha.execute('6LcqDVkrAAAAADb1QY3e_NfIZQYdoNcG0RjqJSCl', { action: 'submit' }).then(function (token) {
-          tokenInput.value = token;
-console.log("5");
-          if (token) {
-            form.submit();
-            console.log("6");
+  if (!form || !tokenInput) {
+    console.error("Form or reCAPTCHA input not found.");
+    return;
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    grecaptcha.ready(function () {
+      grecaptcha.execute('6LcqDVkrAAAAADb1QY3e_NfIZQYdoNcG0RjqJSCl', { action: 'submit' }).then(async function (token) {
+        if (!token) {
+          showStatus("Failed to generate reCAPTCHA token.", false);
+          return;
+        }
+
+        tokenInput.value = token;
+
+        const data = new FormData(form);
+        const action = form.getAttribute("action");
+
+        try {
+          const res = await fetch(action, {
+            method: "POST",
+            body: data,
+            headers: {
+              Accept: "application/json",
+            },
+          });
+
+          if (res.ok) {
+            showStatus("Your message has been sent!", true);
+            form.reset();
           } else {
-            alert("Failed to generate reCAPTCHA token.");
+            const errData = await res.json();
+            const errMsg = errData?.errors?.[0]?.message || "There was an error. Please try again.";
+            showStatus(errMsg, false);
           }
-        });
+        } catch (err) {
+          showStatus("There was an error. Please try again.", false);
+        }
       });
     });
-  } else {
-    console.log("Error: Unable to get form element");
-  }
+  });
 });
