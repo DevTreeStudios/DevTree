@@ -23,7 +23,6 @@ window.onload = function() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("contact-form");
   const tokenInput = document.getElementById("g-recaptcha-response");
 
   if (!form || !tokenInput) {
