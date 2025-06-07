@@ -33,7 +33,8 @@
         <textarea placeholder="Your Message" name="message" rows="6" required></textarea>
         <div class="g-recaptcha" data-sitekey="6LcqDVkrAAAAADb1QY3e_NfIZQYdoNcG0RjqJSCl"></div>
         <br/>
-        <button type="submit" class="btn">Send Message</button>
+        <button class="g-recaptcha" data-sitekey="6LcqDVkrAAAAADb1QY3e_NfIZQYdoNcG0RjqJSCl"
+            data-callback='onSubmit' data-action='submit'>Submit</button>
       </form>
 
       <div id="form-status" class="form-status"></div>
