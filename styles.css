@@ -392,7 +392,8 @@ main.contact-main {
 }
 
 .discord-icon {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
   filter: brightness(0) invert(1);
 }
