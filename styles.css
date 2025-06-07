@@ -32,7 +32,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 10000;
-  box-shadow: 0 2px 8px rgb(107 70 193 / 0.7);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.8);
 }
 
 .header {
