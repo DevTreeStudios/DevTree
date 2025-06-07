@@ -58,7 +58,7 @@ grecaptcha.ready(function () {
   document.getElementById("contact-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    grecaptcha.execute('YOUR_SITE_KEY', { action: 'submit' }).then(function (token) {
+    grecaptcha.execute('6LcqDVkrAAAAADb1QY3e_NfIZQYdoNcG0RjqJSCl', { action: 'submit' }).then(function (token) {
       document.getElementById("g-recaptcha-response").value = token;
       e.target.submit();
     });
