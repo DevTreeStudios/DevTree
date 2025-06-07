@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <script src="https://www.google.com/recaptcha/api.js?render=6LcqDVkrAAAAADb1QY3e_NfIZQYdoNcG0RjqJSCl"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo"><span class="accent">My</span>Site</a>
+      <ul class="nav-links">
+        <li><a href="/DevTree/">Home</a></li>
+        <li><a href="/DevTree/services">Services</a></li>
+        <li><a href="/DevTree/contact" class="active">Contact</a></li>
+        <li><a href="/DevTree/faq">FAQ</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </header>
+
+  <main class="contact-main">
+    <div class="container">
+      <h1 class="fade-in delay-1">Contact Me</h1>
+      <p class="fade-in delay-2">Have a project in mind or a question? Feel free to reach out below.</p>
+      <form class="contact-form fade-in delay-3" action="https://formspree.io/f/mblydvag" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" name="message" rows="6" required></textarea>
+        <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+        <button type="submit" class="btn">Submit</button>
+      </form>
+
+      <div id="form-status" class="form-status"></div>
+
+      <div class="contact-discord fade-in delay-3">
+        <a href="https://discord.com/users/939686107241648149" target="_blank" class="discord-link">
+          <img src="https://freelogopng.com/images/all_img/1691730767discord-logo-transparent.png" alt="Discord Icon" class="discord-icon" />
+          <span>@devtreeco</span>
+        </a>
+      </div>
+    </div>
+  </main>
+  
+  <script src="script.js"></script>
+</body>
+</html>
