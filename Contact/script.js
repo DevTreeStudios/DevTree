@@ -53,3 +53,14 @@ window.onload = function() {
     el.setAttribute('required', 'required'); 
   } 
 }
+
+grecaptcha.ready(function () {
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    grecaptcha.execute('YOUR_SITE_KEY', { action: 'submit' }).then(function (token) {
+      document.getElementById("g-recaptcha-response").value = token;
+      e.target.submit();
+    });
+  });
+});
