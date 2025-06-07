@@ -153,24 +153,16 @@ body, html {
 }
 
 @media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero-content,
-  .hero-image {
-    max-width: 100%;
-  }
   .nav-links {
     position: fixed;
     top: 60px;
     right: -100%;
-    background: #1a202c;
+    background: linear-gradient(180deg, #1a202c 0%, #2d3748 100%);
     height: calc(100% - 60px);
     width: 200px;
     flex-direction: column;
     padding: 2rem 1rem;
-    box-shadow: -4px 0 12px rgba(0,0,0,0.9);
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.9);
     transition: right 0.3s ease;
     z-index: 999;
   }
@@ -181,6 +173,15 @@ body, html {
     margin-bottom: 1.5rem;
     font-size: 1.2rem;
     color: #a0aec0;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  .nav-link:hover,
+  .nav-link.active {
+    background-color: #3c4a6e;
+    color: #d6bcfa;
+    text-decoration: none;
   }
   .hamburger {
     display: flex;
