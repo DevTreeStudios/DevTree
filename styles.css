@@ -345,3 +345,32 @@ main.contact-main {
   align-self: flex-start;
   padding: 0.9rem 2.2rem;
 }
+
+.form-status {
+  margin-top: 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  max-width: 500px;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.form-status.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-status.success {
+  background: #38a169;
+  color: white;
+  box-shadow: 0 4px 12px rgba(56, 161, 105, 0.4);
+}
+
+.form-status.error {
+  background: #e53e3e;
+  color: white;
+  box-shadow: 0 4px 12px rgba(229, 62, 62, 0.4);
+}
