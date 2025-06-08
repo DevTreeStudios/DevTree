@@ -16,6 +16,13 @@ body, html {
   flex-direction: column;
 }
 
+.site-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  user-select: none;
+}
+
 .container {
   max-width: 1200px;
   padding: 0 1.5rem;
