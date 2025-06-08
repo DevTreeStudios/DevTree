@@ -21,3 +21,31 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxContent = document.querySelector(".lightbox-content");
+  const closeBtn = document.querySelector(".close-lightbox");
+
+  document.querySelectorAll(".media-container img, .media-container video, .media-container iframe").forEach(el => {
+    el.addEventListener("click", () => {
+      const clone = el.cloneNode(true);
+      clone.controls = true;
+      lightboxContent.innerHTML = "";
+      lightboxContent.appendChild(clone);
+      lightbox.classList.remove("hidden");
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.classList.add("hidden");
+    lightboxContent.innerHTML = "";
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.add("hidden");
+      lightboxContent.innerHTML = "";
+    }
+  });
+});
