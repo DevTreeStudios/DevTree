@@ -33,18 +33,18 @@ document.addEventListener("DOMContentLoaded", () => {
       clone.controls = true;
       lightboxContent.innerHTML = "";
       lightboxContent.appendChild(clone);
-      lightbox.classList.remove("hidden");
+      lightbox.classList.add("show");
     });
   });
 
   closeBtn.addEventListener("click", () => {
-    lightbox.classList.add("hidden");
+    lightbox.classList.remove("show");
     lightboxContent.innerHTML = "";
   });
 
   lightbox.addEventListener("click", (e) => {
     if (e.target === lightbox) {
-      lightbox.classList.add("hidden");
+      lightbox.classList.remove("show");
       lightboxContent.innerHTML = "";
     }
   });
