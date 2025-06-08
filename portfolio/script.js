@@ -13,10 +13,5 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         block: "start"
       });
     }
-
-    const sidebar = document.getElementById("portfolio-sidebar");
-    if (window.innerWidth <= 768) {
-      sidebar.classList.remove("active");
-    }
   });
 });
