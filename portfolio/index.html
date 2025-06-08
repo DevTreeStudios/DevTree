@@ -2,84 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta property="og:title" content="Portfolio | DevTree Studios" />
+  <meta property="og:description" content="Websites. Software. Games. Explore the Portfolio of DevTree Studios." />
+  <meta property="og:image" content="https://devtreestudios.github.io/DevTree/images/frontpage.png" />
+  <meta property="og:url" content="https://devtreestudios.github.io/DevTree" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Portfolio | DevTree Studios</title>
   <link rel="stylesheet" href="../styles.css" />
-  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  <link rel="icon" type="image/png" href="../images/favicon.png" />
 </head>
 <body>
+  <header class="header">
+    <nav class="navbar">
+      <a href="#" class="logo"><span class="accent">Portfolio</span> | DevTree Studios</a>
+      <ul class="nav-links">
+        <li><a href="/DevTree/">Home</a></li>
+        <li><a href="/DevTree/services">Services</a></li>
+        <li><a href="/DevTree/contact">Contact</a></li>
+        <li><a href="/DevTree/faq">FAQ</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </header>
 
-  <button class="sidebar-toggle" aria-label="Toggle Sidebar">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-
-  <aside class="sidebar">
-    <nav>
+  <div class="portfolio-container">
+    <aside class="portfolio-sidebar" id="portfolio-sidebar">
+      <button class="close-sidebar" onclick="toggleSidebar()">✕</button>
       <ul>
         <li><a href="#websites">Websites</a></li>
         <li><a href="#programs">Programs</a></li>
         <li><a href="#games">Games</a></li>
         <li><a href="#roblox">Roblox</a></li>
       </ul>
-    </nav>
-  </aside>
+    </aside>
+    <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
 
-  <main class="portfolio-content">
-    <section id="websites" class="portfolio-section fade-in">
-      <h2 class="section-title">Websites</h2>
-      <div class="portfolio-items">
-        <div class="portfolio-card">
-          <img src="images/site1.png" alt="Website 1" />
-          <div class="portfolio-info">
-            <h3>Portfolio Site</h3>
-            <p>A sleek modern portfolio with animations and smooth UI.</p>
+    <main class="portfolio-main">
+      <section id="websites" class="portfolio-section">
+        <h2>Websites</h2>
+        <div class="portfolio-items">
+          <div class="portfolio-card fade-in-up">
+            <img src="../images/placeholder.jpg" alt="Website Project" />
+            <div class="card-info">
+              <h3>Project Name</h3>
+              <p>Description of the project and what it does.</p>
+            </div>
+          </div>
+          <!-- More cards... -->
+        </div>
+      </section>
+
+      <section id="programs" class="portfolio-section">
+        <h2>Programs</h2>
+        <div class="portfolio-items">
+          <div class="portfolio-card fade-in-up">
+            <img src="../images/placeholder.jpg" alt="Program Screenshot" />
+            <div class="card-info">
+              <h3>Tool Name</h3>
+              <p>A program I developed for automation or productivity.</p>
+            </div>
           </div>
         </div>
-        <!-- add more here -->
-      </div>
-    </section>
+      </section>
 
-    <section id="programs" class="portfolio-section fade-in delay-1">
-      <h2 class="section-title">Programs</h2>
-      <div class="portfolio-items">
-        <div class="portfolio-card">
-          <img src="images/app1.png" alt="App 1" />
-          <div class="portfolio-info">
-            <h3>Productivity Tool</h3>
-            <p>Built in Python to streamline daily tasks with an intuitive interface.</p>
+      <section id="games" class="portfolio-section">
+        <h2>Games</h2>
+        <div class="portfolio-items">
+          <div class="portfolio-card fade-in-up">
+            <img src="../images/placeholder.jpg" alt="Game" />
+            <div class="card-info">
+              <h3>Game Title</h3>
+              <p>This game features interactive mechanics, design, and coding by me.</p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="games" class="portfolio-section fade-in delay-2">
-      <h2 class="section-title">Games</h2>
-      <div class="portfolio-items">
-        <div class="portfolio-card">
-          <video src="media/game1.mp4" autoplay muted loop></video>
-          <div class="portfolio-info">
-            <h3>Pixel Adventure</h3>
-            <p>A retro-style platformer made with Unity and C#.</p>
+      <section id="roblox" class="portfolio-section">
+        <h2>Roblox</h2>
+        <div class="portfolio-items">
+          <div class="portfolio-card fade-in-up">
+            <img src="../images/placeholder.jpg" alt="Roblox Game" />
+            <div class="card-info">
+              <h3>Roblox Experience</h3>
+              <p>Game development, scripting, and UI design in Roblox Studio.</p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section id="roblox" class="portfolio-section fade-in delay-3">
-      <h2 class="section-title">Roblox</h2>
-      <div class="portfolio-items">
-        <div class="portfolio-card">
-          <img src="images/roblox1.png" alt="Roblox Project" />
-          <div class="portfolio-info">
-            <h3>Club Dazal</h3>
-            <p>A 17+ Roblox social hangout with drinks, dancing, and a full map.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
+  </div>
 
   <script src="script.js"></script>
 </body>
