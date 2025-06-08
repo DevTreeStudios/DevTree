@@ -582,14 +582,16 @@ opacity: 0;
 .media-frame {
   background: #1a1a1a;
   border: 2px solid rgba(165, 111, 255, 0.5);
-  border-radius: 16px;
-  padding: 10px;
-  box-shadow: 0 0 15px rgba(165, 111, 255, 0.2);
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 0 10px rgba(165, 111, 255, 0.15);
+  margin-bottom: 1rem;
   overflow: hidden;
 }
 
 .media-frame img, .media-frame video, .media-frame iframe {
   width: 100%;
+  height: auto;
   border-radius: 8px;
   display: block;
 }
