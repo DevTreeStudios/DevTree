@@ -589,11 +589,26 @@ opacity: 0;
   overflow: hidden;
 }
 
-.media-frame img,
-.media-frame video,
-.media-frame iframe {
+.media-frame img, .media-frame video, .media-frame iframe {
   width: 100%;
   height: auto;
   border-radius: 8px;
+  display: block;
+}
+
+.media-container {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.media-container div {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
