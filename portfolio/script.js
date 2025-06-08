@@ -1,16 +1,22 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.querySelector(".sidebar-toggle");
-  const sidebar = document.querySelector(".sidebar");
+function toggleSidebar() {
+  const sidebar = document.getElementById("portfolio-sidebar");
+  sidebar.classList.toggle("active");
+}
 
-  if (toggle && sidebar) {
-    toggle.addEventListener("click", () => {
-      sidebar.classList.toggle("open");
-    });
-
-    sidebar.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        sidebar.classList.remove("open");
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
       });
-    });
-  }
+    }
+
+    const sidebar = document.getElementById("portfolio-sidebar");
+    if (window.innerWidth <= 768) {
+      sidebar.classList.remove("active");
+    }
+  });
 });
