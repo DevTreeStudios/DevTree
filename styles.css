@@ -580,21 +580,29 @@ opacity: 0;
 }
 
 .media-frame {
-  background: #1a1a1a;
-  border: 2px solid rgba(165, 111, 255, 0.5);
-  border-radius: 12px;
-  padding: 4px;
-  box-shadow: 0 0 10px rgba(165, 111, 255, 0.15);
+  display: flex;
+  gap: 1rem;
   margin-bottom: 1rem;
-  overflow: hidden;
 }
 
-.media-frame img, .media-frame video, .media-frame iframe {
-  width: 100%;
-  height: auto;
-  max-height: 100vw;
+.portfolio-card.single .media-frame {
+  justify-content: center;
+}
+
+.portfolio-card.single .media-frame > * {
   aspect-ratio: 1 / 1;
-  object-fit: contain;
+  width: 100%;
+  object-fit: cover;
   border-radius: 8px;
-  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.portfolio-card.double .media-frame > * {
+  flex: 1;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  height: auto;
 }
