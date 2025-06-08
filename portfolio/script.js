@@ -1,6 +1,8 @@
-function toggleSidebar() {
-  const sidebar = document.getElementById("portfolio-sidebar");
-  sidebar.classList.toggle("active");
+function scrollToSection(id) {
+  const target = document.getElementById(id);
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
