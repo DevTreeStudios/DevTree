@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+  <button class="sidebar-toggle" aria-label="Toggle Sidebar">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        <li><a href="#websites">Websites</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#games">Games</a></li>
+        <li><a href="#roblox">Roblox</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="portfolio-content">
+    <section id="websites" class="portfolio-section fade-in">
+      <h2 class="section-title">Websites</h2>
+      <div class="portfolio-items">
+        <div class="portfolio-card">
+          <img src="images/site1.png" alt="Website 1" />
+          <div class="portfolio-info">
+            <h3>Portfolio Site</h3>
+            <p>A sleek modern portfolio with animations and smooth UI.</p>
+          </div>
+        </div>
+        <!-- add more here -->
+      </div>
+    </section>
+
+    <section id="programs" class="portfolio-section fade-in delay-1">
+      <h2 class="section-title">Programs</h2>
+      <div class="portfolio-items">
+        <div class="portfolio-card">
+          <img src="images/app1.png" alt="App 1" />
+          <div class="portfolio-info">
+            <h3>Productivity Tool</h3>
+            <p>Built in Python to streamline daily tasks with an intuitive interface.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="games" class="portfolio-section fade-in delay-2">
+      <h2 class="section-title">Games</h2>
+      <div class="portfolio-items">
+        <div class="portfolio-card">
+          <video src="media/game1.mp4" autoplay muted loop></video>
+          <div class="portfolio-info">
+            <h3>Pixel Adventure</h3>
+            <p>A retro-style platformer made with Unity and C#.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roblox" class="portfolio-section fade-in delay-3">
+      <h2 class="section-title">Roblox</h2>
+      <div class="portfolio-items">
+        <div class="portfolio-card">
+          <img src="images/roblox1.png" alt="Roblox Project" />
+          <div class="portfolio-info">
+            <h3>Club Dazal</h3>
+            <p>A 17+ Roblox social hangout with drinks, dancing, and a full map.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
