@@ -616,6 +616,8 @@ opacity: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 .media-container > div img, .media-container > div video, .media-container > div iframe {
@@ -624,6 +626,11 @@ opacity: 0;
   object-fit: cover;
   display: block;
   border-radius: 6px;
+}
+
+.media-container > div:hover {
+  filter: brightness(0.8);
+  transform: scale(1.02);
 }
 
 .lightbox {
