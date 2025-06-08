@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta property="og:title" content="Portfolio | DevTree Studios" />
-  <meta property="og:description" content="Websites. Software. Games. Explore the Portfolio of DevTree Studios." />
+  <meta property="og:description" content="Explore our Websites, Games, Programs, and more!" />
   <meta property="og:image" content="https://devtreestudios.github.io/DevTree/images/frontpage.png" />
   <meta property="og:url" content="https://devtreestudios.github.io/DevTree" />
   <meta property="og:type" content="website" />
@@ -29,9 +29,8 @@
     </nav>
   </header>
 
-  <div class="portfolio-container">
-    <aside class="portfolio-sidebar" id="portfolio-sidebar">
-      <button class="close-sidebar" onclick="toggleSidebar()">✕</button>
+  <div class="portfolio-wrapper">
+    <aside class="portfolio-menu" id="portfolioMenu">
       <ul>
         <li><a href="#websites">Websites</a></li>
         <li><a href="#programs">Programs</a></li>
@@ -39,57 +38,55 @@
         <li><a href="#roblox">Roblox</a></li>
       </ul>
     </aside>
-    <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
 
-    <main class="portfolio-main">
-      <section id="websites" class="portfolio-section">
+    <main class="portfolio-content">
+      <section id="websites">
         <h2>Websites</h2>
-        <div class="portfolio-items">
+        <div class="portfolio-grid">
           <div class="portfolio-card fade-in-up">
-            <img src="../images/placeholder.jpg" alt="Website Project" />
+            <img src="../images/placeholder.jpg" alt="Website Screenshot" />
             <div class="card-info">
-              <h3>Project Name</h3>
-              <p>Description of the project and what it does.</p>
+              <h3>Example Website</h3>
+              <p>Description about the site goes here. Clean, fast, responsive.</p>
             </div>
           </div>
-          <!-- More cards... -->
         </div>
       </section>
 
-      <section id="programs" class="portfolio-section">
+      <section id="programs">
         <h2>Programs</h2>
-        <div class="portfolio-items">
+        <div class="portfolio-grid">
           <div class="portfolio-card fade-in-up">
             <img src="../images/placeholder.jpg" alt="Program Screenshot" />
             <div class="card-info">
-              <h3>Tool Name</h3>
-              <p>A program I developed for automation or productivity.</p>
+              <h3>Example Program</h3>
+              <p>This program helps with productivity, designed from scratch.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="games" class="portfolio-section">
+      <section id="games">
         <h2>Games</h2>
-        <div class="portfolio-items">
+        <div class="portfolio-grid">
           <div class="portfolio-card fade-in-up">
-            <img src="../images/placeholder.jpg" alt="Game" />
+            <img src="../images/placeholder.jpg" alt="Game Screenshot" />
             <div class="card-info">
-              <h3>Game Title</h3>
-              <p>This game features interactive mechanics, design, and coding by me.</p>
+              <h3>Example Game</h3>
+              <p>Fun, polished, and custom built from start to finish.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="roblox" class="portfolio-section">
+      <section id="roblox">
         <h2>Roblox</h2>
-        <div class="portfolio-items">
+        <div class="portfolio-grid">
           <div class="portfolio-card fade-in-up">
-            <img src="../images/placeholder.jpg" alt="Roblox Game" />
+            <img src="../images/placeholder.jpg" alt="Roblox Game Screenshot" />
             <div class="card-info">
-              <h3>Roblox Experience</h3>
-              <p>Game development, scripting, and UI design in Roblox Studio.</p>
+              <h3>Roblox Project</h3>
+              <p>Complete scripting and design in Roblox Studio.</p>
             </div>
           </div>
         </div>
