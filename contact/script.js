@@ -2,6 +2,8 @@ const hamburger = document.getElementById("hamburger");
 const navLinks = document.querySelector(".nav-links");
 const form = document.querySelector(".contact-form");
 const statusBox = document.getElementById("form-status");
+const overlay = document.getElementById("essential-cookie-overlay");
+const acceptBtn = document.getElementById("essential-cookie-accept");
 
 hamburger.addEventListener("click", () => {
   navLinks.classList.toggle("open");
@@ -15,12 +17,38 @@ function showStatus(message, success) {
   }, 5000);
 }
 
-window.onload = function() { 
-  var el = document.getElementById('g-recaptcha-response'); 
-  if (el) { 
-    el.setAttribute('required', 'required'); 
-  } 
+// Cookie Consent Logic
+function loadRecaptcha() {
+  if (window.recaptchaLoaded) return;
+  const recaptchaScript = document.createElement("script");
+  recaptchaScript.src = "https://www.google.com/recaptcha/api.js";
+  recaptchaScript.async = true;
+  recaptchaScript.defer = true;
+  document.head.appendChild(recaptchaScript);
+  window.recaptchaLoaded = true;
 }
+
+function acceptEssentialCookies() {
+  localStorage.setItem("essential_cookie_accepted", "true");
+  overlay.style.display = "none";
+  loadRecaptcha();
+}
+
+acceptBtn.addEventListener("click", acceptEssentialCookies);
+
+// Check consent on load
+if (localStorage.getItem("essential_cookie_accepted") !== "true") {
+  overlay.style.display = "flex";
+} else {
+  loadRecaptcha();
+}
+
+window.onload = function () {
+  const el = document.getElementById("g-recaptcha-response");
+  if (el) {
+    el.setAttribute("required", "required");
+  }
+};
 
 document.addEventListener("DOMContentLoaded", function () {
   const tokenInput = document.getElementById("g-recaptcha-response");
@@ -33,8 +61,13 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
+    if (localStorage.getItem("essential_cookie_accepted") !== "true") {
+      showStatus("You must accept essential cookies to submit the form.", false);
+      return;
+    }
+
     grecaptcha.ready(function () {
-      grecaptcha.execute('6LcqDVkrAAAAADb1QY3e_NfIZQYdoNcG0RjqJSCl', { action: 'submit' }).then(async function (token) {
+      grecaptcha.execute("6LcqDVkrAAAAADb1QY3e_NfIZQYdoNcG0RjqJSCl", { action: "submit" }).then(async function (token) {
         if (!token) {
           showStatus("Failed to generate reCAPTCHA token.", false);
           return;
