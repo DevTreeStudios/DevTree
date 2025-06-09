@@ -318,6 +318,22 @@ main.services-main {
     width: 100%;
     text-align: center;
   }
+
+  .cookie-banner {
+    max-height: 33vh;
+    overflow-y: auto;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .cookie-banner p {
+    font-size: 0.9rem;
+  }
+
+  .cookie-banner button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
 }
 
 main.contact-main {
