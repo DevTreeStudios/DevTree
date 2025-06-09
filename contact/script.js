@@ -56,7 +56,7 @@ window.onload = function () {
 };
 
 document.addEventListener("DOMContentLoaded", function () {
-  if (localStorage.getItem("essential_cookie_accepted") === false) {
+  if (localStorage.getItem("essential_cookie_accepted") === "true") {
     overlay.style.display = "none";
   }
   
