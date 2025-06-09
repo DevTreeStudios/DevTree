@@ -807,3 +807,50 @@ opacity: 0;
     width: 100%;
   }
 }
+
+.cookie-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 15, 0.95);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cookie-modal {
+  background: #222;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 90%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.cookie-modal h2 {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.cookie-modal p {
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+
+.cookie-modal button {
+  padding: 0.6rem 1.2rem;
+  background: #7c3aed;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.cookie-modal button:hover {
+  background: #a78bfa;
+}
