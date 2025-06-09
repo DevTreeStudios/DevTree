@@ -20,11 +20,16 @@ function showStatus(message, success) {
 // Cookie Consent Logic
 function loadRecaptcha() {
   if (window.recaptchaLoaded) return;
-  const recaptchaScript = document.createElement("script");
-  recaptchaScript.src = "https://www.google.com/recaptcha/api.js";
-  recaptchaScript.async = true;
-  recaptchaScript.defer = true;
-  document.head.appendChild(recaptchaScript);
+
+  const script = document.createElement("script");
+  script.src = "https://www.google.com/recaptcha/api.js?render=6LcqDVkrAAAAADb1QY3e_NfIZQYdoNcG0RjqJSCl";
+  script.async = true;
+  script.defer = true;
+  script.onload = () => {
+    console.log("reCAPTCHA script loaded");
+  };
+
+  document.head.appendChild(script);
   window.recaptchaLoaded = true;
 }
 
