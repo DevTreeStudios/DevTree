@@ -702,3 +702,92 @@ opacity: 0;
   transform: scale(1.1);
   background: #2c2c2c;
 }
+
+.cookie-consent-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0; right: 0;
+  background: #222;
+  color: #eee;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 -3px 8px rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  font-family: 'Inter', sans-serif;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.cookie-consent-banner.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(100%);
+}
+
+.cookie-consent-content {
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cookie-consent-content p {
+  margin: 0;
+  flex: 1 1 300px;
+  font-size: 1rem;
+}
+
+.cookie-consent-content a {
+  color: #a78bfa;
+  text-decoration: underline;
+}
+
+.cookie-consent-buttons {
+  flex-shrink: 0;
+  display: flex;
+  gap: 0.8rem;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 0.5rem 1.3rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  transition: background-color 0.25s ease;
+  user-select: none;
+}
+
+.btn-primary {
+  background-color: #7c3aed;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #5b21b6;
+}
+
+.btn-secondary {
+  background-color: #444;
+  color: #ccc;
+}
+
+.btn-secondary:hover {
+  background-color: #666;
+}
+
+@media (max-width: 480px) {
+  .cookie-consent-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .cookie-consent-buttons {
+    justify-content: center;
+    width: 100%;
+  }
+}
