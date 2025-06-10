@@ -41,6 +41,7 @@ document.querySelectorAll('.video-placeholder').forEach(placeholder => {
   } else {
     placeholder.addEventListener('click', () => {
       localStorage.setItem('cookie_consent', 'accepted');
+      location.reload();
       loadVideo();
     });
   }
