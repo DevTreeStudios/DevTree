@@ -23,8 +23,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 document.querySelectorAll('.video-placeholder').forEach(placeholder => {
-  placeholder.addEventListener('click', () => {
-    const videoSrc = placeholder.getAttribute('data-video-src');
+  const videoSrc = placeholder.getAttribute('data-video-src');
+
+  const loadVideo = () => {
     const iframe = document.createElement('iframe');
     iframe.src = videoSrc;
     iframe.width = '100%';
@@ -32,9 +33,17 @@ document.querySelectorAll('.video-placeholder').forEach(placeholder => {
     iframe.allow = 'autoplay';
     iframe.allowFullscreen = true;
     iframe.style.border = 'none';
-
     placeholder.replaceWith(iframe);
-  });
+  };
+
+  if (localStorage.getItem('cookie_consent') === 'accepted') {
+    loadVideo();
+  } else {
+    placeholder.addEventListener('click', () => {
+      localStorage.setItem('cookie_consent', 'accepted');
+      loadVideo();
+    });
+  }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
