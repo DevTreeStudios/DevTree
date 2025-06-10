@@ -52,8 +52,8 @@ document.querySelectorAll('.video-placeholder').forEach(placeholder => {
       fallback.style.borderRadius = '8px';
       fallback.style.textAlign = 'center';
       fallback.style.marginTop = '1rem';
-      wrapper.innerHTML = '';
-      wrapper.appendChild(fallback);
+      placeholder.innerHTML = '';
+      placeholder.appendChild(fallback);
     }
   }, 5000);
 
