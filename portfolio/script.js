@@ -22,6 +22,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+document.querySelectorAll('.video-placeholder').forEach(placeholder => {
+  placeholder.addEventListener('click', () => {
+    const videoSrc = placeholder.getAttribute('data-video-src');
+    const iframe = document.createElement('iframe');
+    iframe.src = videoSrc;
+    iframe.width = '100%';
+    iframe.height = '100%';
+    iframe.allow = 'autoplay';
+    iframe.allowFullscreen = true;
+    iframe.style.border = 'none';
+
+    placeholder.replaceWith(iframe);
+  });
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   const lightbox = document.getElementById("lightbox");
   const lightboxContent = document.querySelector(".lightbox-content");
