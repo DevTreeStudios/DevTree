@@ -34,6 +34,20 @@ document.querySelectorAll('.video-placeholder').forEach(placeholder => {
     iframe.allowFullscreen = true;
     iframe.style.border = 'none';
     placeholder.replaceWith(iframe);
+
+    iframe.onerror = () => {
+    const fallback = document.createElement('div');
+    fallback.textContent = "Your browser is blocking this video.";
+    fallback.style.padding = '1rem';
+    fallback.style.background = '#2d2d2d';
+    fallback.style.color = '#fff';
+    fallback.style.border = '1px solid #555';
+    fallback.style.borderRadius = '8px';
+    fallback.style.textAlign = 'center';
+    fallback.style.marginTop = '1rem';
+  
+    placeholder.replaceWith(fallback);
+  };
   };
 
   if (localStorage.getItem('cookie_consent') === 'accepted') {
