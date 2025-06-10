@@ -56,7 +56,7 @@ document.querySelectorAll('.video-placeholder').forEach(placeholder => {
         wrapper.appendChild(fallback);
       }
     }, 5000);
-  };
+  });
 
   if (localStorage.getItem('cookie_consent') === 'accepted') {
     loadVideo();
