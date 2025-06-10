@@ -66,7 +66,7 @@ document.querySelectorAll('.video-placeholder').forEach(placeholder => {
       loadVideo();
     });
   }
-)};
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   const lightbox = document.getElementById("lightbox");
