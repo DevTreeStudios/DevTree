@@ -25,13 +25,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 document.querySelectorAll('.video-placeholder').forEach(placeholder => {
   const videoSrc = placeholder.getAttribute('data-video-src');
 
-  const fallbackNote = document.createElement('p');
-  fallbackNote.textContent = "If the video doesn't play, your browser might be blocking it. Try another browser or allow third-party content.";
-  fallbackNote.style.fontSize = '0.9rem';
-  fallbackNote.style.color = '#ccc';
-  fallbackNote.style.marginTop = '0.5rem';
-  placeholder.parentNode.appendChild(fallbackNote);
-
   const loadVideo = () => {
     const iframe = document.createElement('iframe');
     iframe.src = videoSrc;
@@ -42,6 +35,13 @@ document.querySelectorAll('.video-placeholder').forEach(placeholder => {
     iframe.style.border = 'none';
     placeholder.replaceWith(iframe);
   };
+
+  const fallbackNote = document.createElement('p');
+  fallbackNote.textContent = "If the video doesn't play, your browser might be blocking it. Try another browser or allow third-party content.";
+  fallbackNote.style.fontSize = '0.9rem';
+  fallbackNote.style.color = '#ccc';
+  fallbackNote.style.marginTop = '0.5rem';
+  placeholder.parentNode.appendChild(fallbackNote);
 
   if (localStorage.getItem('cookie_consent') === 'accepted') {
     loadVideo();
