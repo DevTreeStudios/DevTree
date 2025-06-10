@@ -25,6 +25,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 document.querySelectorAll('.video-placeholder').forEach(placeholder => {
   const videoSrc = placeholder.getAttribute('data-video-src');
 
+  const fallbackNote = document.createElement('p');
+  fallbackNote.textContent = "If the video doesn't play, your browser might be blocking it. Try another browser or allow third-party content.";
+  fallbackNote.style.fontSize = '0.9rem';
+  fallbackNote.style.color = '#ccc';
+  fallbackNote.style.marginTop = '0.5rem';
+  placeholder.parentNode.appendChild(fallbackNote);
+
   const loadVideo = () => {
     const iframe = document.createElement('iframe');
     iframe.src = videoSrc;
@@ -34,20 +41,6 @@ document.querySelectorAll('.video-placeholder').forEach(placeholder => {
     iframe.allowFullscreen = true;
     iframe.style.border = 'none';
     placeholder.replaceWith(iframe);
-
-    iframe.onerror = () => {
-    const fallback = document.createElement('div');
-    fallback.textContent = "Your browser is blocking this video.";
-    fallback.style.padding = '1rem';
-    fallback.style.background = '#2d2d2d';
-    fallback.style.color = '#fff';
-    fallback.style.border = '1px solid #555';
-    fallback.style.borderRadius = '8px';
-    fallback.style.textAlign = 'center';
-    fallback.style.marginTop = '1rem';
-  
-    placeholder.replaceWith(fallback);
-  };
   };
 
   if (localStorage.getItem('cookie_consent') === 'accepted') {
