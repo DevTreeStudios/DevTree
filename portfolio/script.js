@@ -37,26 +37,25 @@ document.querySelectorAll('.video-placeholder').forEach(placeholder => {
   };
 
   setTimeout(() => {
-      try {
-        const win = iframe.contentWindow;
-        if (!win || iframe.contentDocument?.body?.innerHTML === '') {
-          throw new Error();
-        }
-      } catch (e) {
-        const fallback = document.createElement('div');
-        fallback.textContent = "Your browser is blocking the video. Please check your privacy settings or try a different browser.";
-        fallback.style.padding = '1rem';
-        fallback.style.background = '#2d2d2d';
-        fallback.style.color = '#fff';
-        fallback.style.border = '1px solid #555';
-        fallback.style.borderRadius = '8px';
-        fallback.style.textAlign = 'center';
-        fallback.style.marginTop = '1rem';
-        wrapper.innerHTML = '';
-        wrapper.appendChild(fallback);
+    try {
+      const win = iframe.contentWindow;
+      if (!win || iframe.contentDocument?.body?.innerHTML === '') {
+        throw new Error();
       }
-    }, 5000);
-  });
+    } catch (e) {
+      const fallback = document.createElement('div');
+      fallback.textContent = "Your browser is blocking the video. Please check your privacy settings or try a different browser.";
+      fallback.style.padding = '1rem';
+      fallback.style.background = '#2d2d2d';
+      fallback.style.color = '#fff';
+      fallback.style.border = '1px solid #555';
+      fallback.style.borderRadius = '8px';
+      fallback.style.textAlign = 'center';
+      fallback.style.marginTop = '1rem';
+      wrapper.innerHTML = '';
+      wrapper.appendChild(fallback);
+    }
+  }, 5000);
 
   if (localStorage.getItem('cookie_consent') === 'accepted') {
     loadVideo();
