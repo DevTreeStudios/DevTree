@@ -901,3 +901,18 @@ opacity: 0;
 .play-button:hover {
   background: rgba(255, 255, 255, 0.4);
 }
+
+.privacy-policy-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 3rem;
+  color: #ffffff;
+}
+
+.privacy-policy-information {
+  max-width: 800px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+  font-size: 1rem;
+  color: #ccc;
+}
