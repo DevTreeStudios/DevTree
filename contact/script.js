@@ -42,7 +42,7 @@ function acceptEssentialCookies() {
 acceptBtn.addEventListener("click", acceptEssentialCookies);
 
 // Check consent on load
-if (localStorage.getItem("essential_cookie_accepted") !== "true" && localStorage.getItem("cookie_consent") !== "true") {
+if (localStorage.getItem("essential_cookie_accepted") !== "true" && localStorage.getItem("cookie_consent") !== "accepted") {
   overlay.style.display = "flex";
 } else {
   loadRecaptcha();
