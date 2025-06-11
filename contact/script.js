@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    if (localStorage.getItem("essential_cookie_accepted") !== "true") {
+    if (localStorage.getItem("essential_cookie_accepted") !== "true" && localStorage.getItem("cookie_consent") !== "accepted") {
       showStatus("You must accept essential cookies to submit the form.", false);
       return;
     }
