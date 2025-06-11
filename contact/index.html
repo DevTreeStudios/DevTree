@@ -40,14 +40,15 @@
         <input type="email" name="email" placeholder="Your Email" required />
         <textarea placeholder="Your Message" name="message" rows="6" required></textarea>
         <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+        
+        <p class="form-disclaimer">
+          This form is protected by reCAPTCHA and the Google 
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> and 
+          <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms of Service</a> apply.
+        </p>
+        
         <button type="submit" class="btn">Submit</button>
       </form>
-
-      <p class="form-disclaimer">
-        This form is protected by reCAPTCHA and the Google 
-        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> and 
-        <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms of Service</a> apply.
-      </p>
 
       <div id="form-status" class="form-status"></div>
 
