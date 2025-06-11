@@ -933,3 +933,18 @@ opacity: 0;
   color: #68a0ff;
   text-decoration: underline;
 }
+
+.form-disclaimer {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 1rem;
+}
+
+.form-disclaimer a {
+  color: #b78bfa;
+  text-decoration: underline;
+}
+
+.form-disclaimer a:hover {
+  color: #d1aaff;
+}
