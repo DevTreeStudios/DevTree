@@ -36,11 +36,11 @@ document.querySelectorAll('.video-placeholder').forEach(placeholder => {
     placeholder.replaceWith(iframe);
   };
 
-  if (localStorage.getItem('cookie_consent') === 'accepted') {
+  if (localStorage.getItem('cookie_consent') === 'accepted' || localStorage.getItem('google_drive_cookie_consent') === 'accepted') {
     loadVideo();
   } else {
     placeholder.addEventListener('click', () => {
-      localStorage.setItem('cookie_consent', 'accepted');
+      localStorage.setItem('google_drive_cookie_consent', 'accepted');
       location.reload();
       loadVideo();
     });
